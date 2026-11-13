@@ -31,7 +31,6 @@ uint16_t lineSensorValues[NUM_SENSORS];
 const float NUDGE_DEG = 3.0;
 int nudgeDir = 0;  // -1 = steer right, 0 = hold, +1 = steer left
 
-// These control the base forward speed and how strongly the robot turns.
 const int BASE_SPEED = 150;          // 0-400
 const int TURN_SPEED = 100;
 const int MAX_CORRECTION = 100;
@@ -43,7 +42,6 @@ const int FORCED_CORRECTION = 60;
 
 // ----------Gyro----------
 // These variables store the gyro information and the robot's current heading.
-// heading is measured in degrees, and increases when the robot turns left.
 const float GYRO_SCALE = 0.07;  // deg/s per raw unit at 2000 dps
 float gyroOffset = 0;
 float heading = 0;
@@ -69,7 +67,6 @@ State nextTurn;
 uint32_t stateStart = 0;
 float turnStartHeading = 0;
 
-// How long to move forward before starting a corner turn.
 const uint16_t ADVANCE_MS = 150;  // Gives the robot time to reach the corner.
 const float TURN_ANGLE = 85;      // Slightly under 90 degrees to allow for overshoot.
 
